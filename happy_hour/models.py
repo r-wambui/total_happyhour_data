@@ -10,8 +10,7 @@ class Restaurant(Document):
 
 
 class DayOfWeek(Document):
-    day = StringField(max_length=20, required=True)
+    day = ListField(ReferenceField(Restaurant))
     deals = StringField(max_length=200, required=True)
     start_time = DateTimeField(required=True)
     end_time = DateTimeField(required=True)
-
